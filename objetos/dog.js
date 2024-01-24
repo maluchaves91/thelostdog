@@ -12,4 +12,8 @@ class Dog {
     show() {
         image(img_dog, this.x, this.y, this.w, this.h);
     }
+
+    jump(){
+        this.y -= 10;
+    }
 }
