@@ -20,9 +20,12 @@ function setup() {
   function draw() {
     background(220);
     dog.show();
-  
+  dog.move();
 
-  if(Keypressed=" "){
-    dog.jump();
+  
+  function keyPressed(){
+    if(Key=" "){
+      dog.jump();
+    }
   }
 }
