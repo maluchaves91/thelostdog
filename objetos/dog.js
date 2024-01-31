@@ -9,9 +9,9 @@ class Dog {
     }
 
     move() {
-        this.y += this.vy;
-        this.vy += this.g;
-        this.y = constrain(this.y, 0, height - this.h);
+     this.y += this.vy;
+     this.vy += this.g;
+          this.y = constrain(this.y, 0, height - this.h);
     }
 
     show() {
