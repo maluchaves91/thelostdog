@@ -1,6 +1,6 @@
 let dog;
 let img_btn_iniciar, img_dog, img_fundo, img_inicio, img_moeda, img_perdeu, img_venceu, img_obstaculo;
-let popp;
+let poop;
 function preload() {
   img_btn_iniciar = loadImage("imagens/btn_iniciar.png");
   img_dog = loadImage("imagens/dog.gif");
@@ -13,9 +13,9 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+  createCanvas(900, 500);
   dog = new Dog();
-  popp=new Popp();
+  poop=new Popp();
 }
 
 function draw() {
