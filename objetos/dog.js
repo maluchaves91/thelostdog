@@ -4,7 +4,7 @@ class Dog {
         this.h = height / 8;
         this.x = 50;
         this.y = height - 1.2 * this.h;
-        this.g = 5;
+        this.g = 2;
         this.vy = 0;
     }
 
@@ -20,7 +20,7 @@ class Dog {
 
     jump() {
         if (this.y == height - this.h) {
-            this.vy = -35;
+            this.vy = -25;
         }
     }
 }

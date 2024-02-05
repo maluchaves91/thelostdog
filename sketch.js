@@ -1,6 +1,6 @@
 let dog;
 let img_btn_iniciar, img_dog, img_fundo, img_inicio, img_moeda, img_perdeu, img_venceu, img_obstaculo;
-let poop;
+let poop = [];
 function preload() {
   img_btn_iniciar = loadImage("imagens/btn_iniciar.png");
   img_dog = loadImage("imagens/dog.gif");
@@ -15,19 +15,28 @@ function preload() {
 function setup() {
   createCanvas(900, 500);
   dog = new Dog();
-  poop=new Popp();
 }
 
 function draw() {
   background(220);
   dog.show();
   dog.move();
-  poop.show();
-  poop.move();
+  nascerpoop();
+  for (let p of poop) {
+    p.show();
+    p.move();
+  }
+
 }
 
-function keyPressed(){
+function keyPressed() {
   if (key === " ") {
     dog.jump();
+  }
+}
+
+function nascerpoop() {
+  if (frameCount % 80 === 0) {
+    poop.push(new Popp());
   }
 }
