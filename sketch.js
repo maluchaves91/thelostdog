@@ -15,12 +15,15 @@ function preload() {
 function setup() {
   createCanvas(900, 500);
   dog = new Dog();
+  fundo = new Fundo();
 }
 
 function draw() {
   background(220);
+  fundo.show();
   dog.show();
   dog.move();
+  
   nascerpoop();
   for (let p of poop) {
     p.show();
