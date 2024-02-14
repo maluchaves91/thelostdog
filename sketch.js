@@ -1,6 +1,7 @@
 let dog;
 let img_btn_iniciar, img_dog, img_fundo, img_inicio, img_moeda, img_perdeu, img_venceu, img_obstaculo;
 let poop = [];
+let moeda = [];
 function preload() {
   img_btn_iniciar = loadImage("imagens/btn_iniciar.png");
   img_dog = loadImage("imagens/dog.gif");
@@ -29,7 +30,11 @@ function draw() {
     p.show();
     p.move();
   }
-
+  nascermoeda();
+  for (let m of moeda) {
+    m.show();
+    m.move();
+  }
 }
 
 function keyPressed() {
@@ -41,5 +46,10 @@ function keyPressed() {
 function nascerpoop() {
   if (frameCount % 80 === 0) {
     poop.push(new Popp());
+  }
+}
+function nascermoeda() {
+  if (frameCount % 80 === 0) {
+    moeda.push(new Moeda());
   }
 }
