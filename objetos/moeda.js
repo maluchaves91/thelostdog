@@ -1,9 +1,9 @@
 class Moeda{
     constructor(){
-        this.w=width/8;
-        this.h=width/8;
+        this.w=width/10;
+        this.h=width/10;
         this.x=width;
-        this.y=height - 0.5 * this.h;
+        this.y=height - 1.2 * this.h;
         this.vx = 10;
     }
         show() {
@@ -11,7 +11,7 @@ class Moeda{
         }
         
         move() {
-            this.x += this.vx;
+            this.x -= this.vx;
         }
 
     }
