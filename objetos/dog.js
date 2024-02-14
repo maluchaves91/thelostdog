@@ -23,4 +23,11 @@ class Dog {
             this.vy = -25;
         }
     }
+    hit(poop){
+        let x1= this.x + this.w/2;
+        let y1= this.y + this.h/2;
+        let x2= poop.x - this.w/2;
+        let y2= poop.y - this.h/2;
+        collideRectRect(x1, y1, this.w,this.h,x2,y2,inimigo.w,inimigo.h)
+    }
 }
