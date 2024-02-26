@@ -11,7 +11,7 @@ class Moeda{
         }
         
         move() {
-            this.x += this.vx;
+            this.x -= this.vx;
         }
 
     }
