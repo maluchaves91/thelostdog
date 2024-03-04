@@ -9,9 +9,9 @@ class Dog {
     }
 
     move() {
-     this.y += this.vy;
-     this.vy += this.g;
-          this.y = constrain(this.y, 0, height - this.h);
+        this.y += this.vy;
+        this.vy += this.g;
+        this.y = constrain(this.y, 0, height - this.h);
     }
 
     show() {
@@ -23,5 +23,15 @@ class Dog {
             this.vy = -25;
         }
     }
-  
+
+    hits(poop) {
+        let x1 = this.x;
+        let y1 = this.y;
+        let x2 = poop.x;
+        let y2 = poop.y;
+
+        return collideRectRect(x1, y1, this.w, this.h, x2, y2, poop.w, poop.h);
+    }
+
+
 }

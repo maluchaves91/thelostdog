@@ -2,6 +2,9 @@ let dog;
 let img_btn_iniciar, img_dog, img_fundo, img_inicio, img_moeda, img_perdeu, img_venceu, img_obstaculo;
 let poop = [];
 let moeda = [];
+let gamestatus = 0;
+let gameover;
+
 function preload() {
   img_btn_iniciar = loadImage("imagens/btn_iniciar.png");
   img_dog = loadImage("imagens/dog.gif");
@@ -17,24 +20,39 @@ function setup() {
   createCanvas(900, 500);
   dog = new Dog();
   fundo = new Fundo();
+  inicio = new Inicio();
+  gameover = new Gameover();
 }
 
 function draw() {
-  background(220);
-  fundo.show();
-  dog.show();
-  dog.move();
-  
-  nascerpoop();
-  for (let p of poop) {
-    p.show();
-    p.move();
+
+  if (gamestatus == 0) {
+    inicio.show();
+  } else if (gamestatus == 1) {
+    background(220);
+    fundo.show();
+    dog.show();
+    dog.move();
+
+    nascerpoop();
+    for (let p of poop) {
+      p.show();
+      p.move();
+      if (dog.hits(p)) {
+        gamestatus = 2;
+      }
+    }
+    nascermoeda();
+    for (let m of moeda) {
+      m.show();
+      m.move();
+    }
+  } else if (gamestatus == 2) {
+    gameover.show();
   }
-  nascermoeda();
-  for (let m of moeda) {
-    m.show();
-    m.move();
-  }
+
+
+
 }
 
 function keyPressed() {
@@ -52,4 +70,8 @@ function nascermoeda() {
   if (frameCount % 80 === 0) {
     moeda.push(new Moeda());
   }
+}
+
+function mousePressed() {
+  gamestatus = 1;
 }
