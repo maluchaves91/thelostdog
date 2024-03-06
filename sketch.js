@@ -17,7 +17,8 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(900, 500);
+  let canvas = createCanvas(800, 400);
+  canvas.center()
   dog = new Dog();
   fundo = new Fundo();
   inicio = new Inicio();
@@ -48,6 +49,7 @@ function draw() {
       m.move();
     }
   } else if (gamestatus == 2) {
+    fundo.show();
     gameover.show();
   }
 
